@@ -157,7 +157,7 @@ public class LandPathNodeCache {
 
     private static boolean isChunkSectionDangerousNeighbor(ChunkSection section) {
         return section.getContainer()
-                .hasAny(LandPathNodeCache::isNeighborDangerous);
+                .method_19526(LandPathNodeCache::isNeighborDangerous);
     }
 
     private static boolean isNeighborDangerous(BlockState state) {

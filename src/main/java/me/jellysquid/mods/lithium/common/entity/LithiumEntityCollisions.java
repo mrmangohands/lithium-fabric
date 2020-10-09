@@ -106,7 +106,7 @@ public class LithiumEntityCollisions {
             @Override
             public boolean computeNext(Consumer<? super VoxelShape> consumer) {
                 if (this.it == null) {
-                    this.it = view.getOtherEntities(entity, box).iterator();
+                    this.it = view.getEntities(entity, box).iterator();
                 }
 
                 while (this.it.hasNext()) {
