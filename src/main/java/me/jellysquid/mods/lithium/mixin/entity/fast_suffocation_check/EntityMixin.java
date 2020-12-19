@@ -25,7 +25,7 @@ public abstract class EntityMixin {
             method = "isInsideWall",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/world/World;getBlockCollisions(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/Box;Ljava/util/function/BiPredicate;)Ljava/util/stream/Stream;"
+                    target = "Lnet/minecraft/world/World;method_30030(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/Box;Ljava/util/function/BiPredicate;)Ljava/util/stream/Stream;"
             )
     )
     public Stream<VoxelShape> isInsideWall(World world, Entity entity, Box box, BiPredicate<BlockState, BlockPos> biPredicate) {
