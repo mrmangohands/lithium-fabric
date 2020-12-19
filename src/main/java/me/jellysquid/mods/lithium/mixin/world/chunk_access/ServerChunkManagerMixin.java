@@ -213,7 +213,7 @@ public abstract class ServerChunkManagerMixin {
     private void createChunkLoadTicket(int x, int z, int level) {
         ChunkPos chunkPos = new ChunkPos(x, z);
 
-        this.ticketManager.addTicketWithLevel(ChunkTicketType.UNKNOWN, chunkPos, level, chunkPos);
+        this.ticketManager.addTicketWithLevel(ChunkTicketType.field_14032, chunkPos, level, chunkPos);
     }
 
     /**
