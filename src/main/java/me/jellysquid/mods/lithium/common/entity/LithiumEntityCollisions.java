@@ -129,10 +129,10 @@ public class LithiumEntityCollisions {
                      * otherEntity as a vehicle.
                      */
                     if (entity == null) {
-                        if (!otherEntity.isCollidable()) {
+                        if (!otherEntity.method_30948()) {
                             continue;
                         }
-                    } else if (!entity.collidesWith(otherEntity)) {
+                    } else if (!entity.method_30949(otherEntity)) {
                         continue;
                     }
 
