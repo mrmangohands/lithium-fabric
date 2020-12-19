@@ -54,15 +54,15 @@ public abstract class SerializingRegionBasedStorageMixin<R> implements RegionBas
     }
 
     private void onEntryAdded(long key, Optional<R> value) {
-        int y = ChunkSectionPos.unpackY(key);
+        int y = ChunkSectionPos.getY(key);
 
         // We only care about items belonging to a valid sub-chunk
         if (y < 0 || y >= 16) {
             return;
         }
 
-        int x = ChunkSectionPos.unpackX(key);
-        int z = ChunkSectionPos.unpackZ(key);
+        int x = ChunkSectionPos.getX(key);
+        int z = ChunkSectionPos.getZ(key);
 
         long pos = ChunkPos.toLong(x, z);
 

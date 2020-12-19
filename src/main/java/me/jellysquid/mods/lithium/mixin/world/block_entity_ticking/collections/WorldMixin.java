@@ -56,7 +56,8 @@ public abstract class WorldMixin implements WorldAccess {
     private BlockEntityList pendingBlockEntities$lithium;
 
     @Inject(method = "<init>", at = @At("RETURN"))
-    private void reinit(MutableWorldProperties properties, RegistryKey<World> registryKey, DimensionType dimensionType,
+    private void reinit(MutableWorldProperties properties, RegistryKey<World> registryKey,
+                        RegistryKey<DimensionType> registryKey2, DimensionType dimensionType,
                         Supplier<Profiler> supplier, boolean bl, boolean bl2, long l, CallbackInfo ci) {
         // Replace the fallback collections with our types as well
         // This won't guarantee mod compatibility, but at least it should fail loudly when it does

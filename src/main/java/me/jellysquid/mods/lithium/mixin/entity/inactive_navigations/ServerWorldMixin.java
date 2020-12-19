@@ -59,7 +59,7 @@ public abstract class ServerWorldMixin extends World implements ServerWorldExten
     private boolean isIteratingActiveEntityNavigations;
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    private void init(MinecraftServer server, Executor workerExecutor, LevelStorage.Session session, ServerWorldProperties properties, RegistryKey<World> registryKey, DimensionType dimensionType, WorldGenerationProgressListener worldGenerationProgressListener, ChunkGenerator chunkGenerator, boolean debugWorld, long l, List<Spawner> list, boolean bl, CallbackInfo ci) {
+    private void init(MinecraftServer server, Executor workerExecutor, LevelStorage.Session session, ServerWorldProperties properties, RegistryKey<World> registryKey, RegistryKey<DimensionType> registryKey2, DimensionType dimensionType, WorldGenerationProgressListener worldGenerationProgressListener, ChunkGenerator chunkGenerator, boolean debugWorld, long l, List<Spawner> list, boolean bl, CallbackInfo ci) {
         this.entityNavigations = new ReferenceOpenHashSet<>(this.entityNavigations);
         this.activeEntityNavigations = new ReferenceOpenHashSet<>();
         this.activeEntityNavigationUpdates = new ArrayList<>();
@@ -153,8 +153,8 @@ public abstract class ServerWorldMixin extends World implements ServerWorldExten
         }
     }
 
-    protected ServerWorldMixin(MutableWorldProperties properties, RegistryKey<World> registryRef, DimensionType dimensionType, Supplier<Profiler> profiler, boolean isClient, boolean debugWorld, long seed) {
-        super(properties, registryRef, dimensionType, profiler, isClient, debugWorld, seed);
+    protected ServerWorldMixin(MutableWorldProperties properties, RegistryKey<World> registryKey, RegistryKey<DimensionType> registryKey2, DimensionType dimensionType, Supplier<Profiler> profiler, boolean isClient, boolean debugWorld, long seed) {
+        super(properties, registryKey, registryKey2, dimensionType, profiler, isClient, debugWorld, seed);
     }
 
     /**

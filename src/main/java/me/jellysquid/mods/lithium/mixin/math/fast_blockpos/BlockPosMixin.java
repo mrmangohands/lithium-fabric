@@ -28,7 +28,6 @@ public abstract class BlockPosMixin extends Vec3i {
      * @author JellySquid
      * @reason Simplify and inline
      */
-    @Override
     @Overwrite
     public BlockPos up() {
         return new BlockPos(this.getX(), this.getY() + 1, this.getZ());
@@ -38,7 +37,6 @@ public abstract class BlockPosMixin extends Vec3i {
      * @author JellySquid
      * @reason Simplify and inline
      */
-    @Override
     @Overwrite
     public BlockPos up(int distance) {
         return new BlockPos(this.getX(), this.getY() + distance, this.getZ());

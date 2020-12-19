@@ -3,8 +3,8 @@ package me.jellysquid.mods.lithium.mixin.gen.fast_island_noise;
 import me.jellysquid.mods.lithium.common.world.noise.SimplexNoiseCache;
 import net.minecraft.util.math.noise.SimplexNoiseSampler;
 import net.minecraft.world.biome.source.BiomeSource;
-import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
-import net.minecraft.world.gen.chunk.NoiseChunkGenerator;
+import net.minecraft.world.gen.chunk.ChunkGeneratorType;
+import net.minecraft.world.gen.chunk.SurfaceChunkGenerator;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -13,19 +13,17 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.function.Supplier;
-
-@Mixin(NoiseChunkGenerator.class)
-public class NoiseChunkGeneratorMixin {
+@Mixin(SurfaceChunkGenerator.class)
+public class SurfaceChunkGeneratorMixin {
     @Shadow
     @Final
-    private SimplexNoiseSampler islandNoise;
+    private SimplexNoiseSampler field_24777;
 
     private ThreadLocal<SimplexNoiseCache> tlCache;
 
-    @Inject(method = "<init>(Lnet/minecraft/world/biome/source/BiomeSource;Lnet/minecraft/world/biome/source/BiomeSource;JLjava/util/function/Supplier;)V", at = @At("RETURN"))
-    private void hookConstructor(BiomeSource biomeSource, BiomeSource biomeSource2, long worldSeed, Supplier<ChunkGeneratorSettings> supplier, CallbackInfo ci) {
-        this.tlCache = ThreadLocal.withInitial(() -> new SimplexNoiseCache(this.islandNoise));
+    @Inject(method = "<init>(Lnet/minecraft/world/biome/source/BiomeSource;Lnet/minecraft/world/biome/source/BiomeSource;JLnet/minecraft/world/gen/chunk/ChunkGeneratorType;)V", at = @At("RETURN"))
+    private void hookConstructor(BiomeSource biomeSource, BiomeSource biomeSource2, long l, ChunkGeneratorType chunkGeneratorType, CallbackInfo ci) {
+        this.tlCache = ThreadLocal.withInitial(() -> new SimplexNoiseCache(this.field_24777));
     }
 
     /**

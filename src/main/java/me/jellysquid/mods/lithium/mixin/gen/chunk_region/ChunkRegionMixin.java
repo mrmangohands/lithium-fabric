@@ -5,7 +5,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.ChunkRegion;
-import net.minecraft.world.StructureWorldAccess;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.chunk.Chunk;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.List;
 
 @Mixin(ChunkRegion.class)
-public abstract class ChunkRegionMixin implements StructureWorldAccess {
+public abstract class ChunkRegionMixin implements ServerWorldAccess {
     @Shadow
     @Final
     private ChunkPos lowerCorner;

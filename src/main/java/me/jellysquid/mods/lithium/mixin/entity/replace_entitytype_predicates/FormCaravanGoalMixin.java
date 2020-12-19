@@ -19,7 +19,7 @@ public class FormCaravanGoalMixin {
             method = "canStart",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/world/World;getOtherEntities(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/Box;Ljava/util/function/Predicate;)Ljava/util/List;"
+                    target = "Lnet/minecraft/world/World;getEntities(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/Box;Ljava/util/function/Predicate;)Ljava/util/List;"
             )
     )
     private List<Entity> getLlamasForCaravan(World world, Entity excluded, Box box, Predicate<? super Entity> predicate) {
