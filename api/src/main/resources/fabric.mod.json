@@ -14,7 +14,7 @@
     "license": "LGPL-3.0-only",
     "environment": "*",
     "depends": {
-        "minecraft": "1.16.2"
+        "minecraft": "1.16.1"
     },
     "custom": {
         "modmenu:api": true,

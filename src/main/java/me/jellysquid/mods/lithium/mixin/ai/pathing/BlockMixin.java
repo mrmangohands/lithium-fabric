@@ -8,7 +8,7 @@ import net.minecraft.entity.ai.pathing.PathNodeType;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(Block.class)
-public class MixinBlock implements BlockPathingBehavior {
+public class BlockMixin implements BlockPathingBehavior {
     @Override
     public PathNodeType getPathNodeType(BlockState state) {
         return PathNodeDefaults.getNodeType(state);
