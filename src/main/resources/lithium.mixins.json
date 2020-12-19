@@ -54,7 +54,6 @@
     "chunk.entity_class_groups.TypeFilterableListMixin",
     "chunk.no_locking.PalettedContainerMixin",
     "chunk.palette.PalettedContainerMixin",
-    "chunk.section_update_tracking.ChunkHolderMixin",
     "chunk.serialization.PackedIntegerArrayMixin",
     "chunk.serialization.PalettedContainerMixin",
     "collections.entity_filtering.TypeFilterableListMixin",
