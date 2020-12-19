@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.explosion.DefaultExplosionBehavior;
 import net.minecraft.world.explosion.EntityExplosionBehavior;
 import net.minecraft.world.explosion.Explosion;
 import net.minecraft.world.explosion.ExplosionBehavior;
@@ -16,7 +17,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import java.util.Optional;
 
 @Mixin(EntityExplosionBehavior.class)
-public class EntityExplosionBehaviorMixin extends ExplosionBehavior {
+public abstract class EntityExplosionBehaviorMixin implements ExplosionBehavior {
     @Shadow
     @Final
     private Entity entity;
@@ -27,7 +28,7 @@ public class EntityExplosionBehaviorMixin extends ExplosionBehavior {
      */
     @Overwrite
     public Optional<Float> getBlastResistance(Explosion explosion, BlockView world, BlockPos pos, BlockState blockState, FluidState fluidState) {
-        Optional<Float> optionalBlastResistance = super.getBlastResistance(explosion, world, pos, blockState, fluidState);
+        Optional<Float> optionalBlastResistance = DefaultExplosionBehavior.INSTANCE.getBlastResistance(explosion, world, pos, blockState, fluidState);
         if (optionalBlastResistance.isPresent()) {
             float blastResistance = optionalBlastResistance.get();
             float effectiveExplosionResistance = this.entity.getEffectiveExplosionResistance(explosion, world, pos, blockState, fluidState, blastResistance);

@@ -43,7 +43,7 @@ public class StructureFeatureMixin {
     private Chunk biomeConditionalGetChunk(WorldView worldView, int x, int z, ChunkStatus status) {
         // Magic numbers << 2) + 2 and biomeY = 0 taken from ChunkGenerator.setStructureStarts
         //noinspection rawtypes
-        if (worldView.getBiomeForNoiseGen((x << 2) + 2, 0, (z << 2) + 2).getGenerationSettings().hasStructureFeature((StructureFeature) (Object) this)) {
+        if (worldView.getBiomeForNoiseGen((x << 2) + 2, 0, (z << 2) + 2).hasStructureFeature((StructureFeature) (Object) this)) {
             return worldView.getChunk(x, z, status);
         } else {
             return null;
