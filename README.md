@@ -1,21 +1,20 @@
 ![Project icon](https://git-assets.jellysquid.me/hotlink-ok/lithium/icon-rounded-128px.png)
 
-# Lithium (for Fabric)
-![GitHub license](https://img.shields.io/github/license/jellysquid3/lithium-fabric.svg)
-![GitHub issues](https://img.shields.io/github/issues/jellysquid3/lithium-fabric.svg)
-![GitHub tag](https://img.shields.io/github/tag/jellysquid3/lithium-fabric.svg)
-[![Discord chat](https://img.shields.io/badge/chat%20on-discord-7289DA)](https://jellysquid.me/discord)
-[![CurseForge downloads](http://cf.way2muchnoise.eu/full_360438_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/lithium)
+# Lithium Ports (for Fabric)
+![GitHub license](https://img.shields.io/github/license/mrmangohands/lithium-fabric.svg)
+![GitHub issues](https://img.shields.io/github/issues/mrmangohands/lithium-fabric.svg)
+![GitHub tag](https://img.shields.io/github/tag/mrmangohands/lithium-fabric.svg)
 
 Lithium is a free and open-source Minecraft mod which works to optimize many areas of the game in order to provide
 better overall performance. It works on both the **client and server**, and **doesn't require the mod to be installed
 on both sides**.
 
+These are unofficial ports of [JellySquid and 2No2Name's original mod](https://github.com/jellysquid3/lithium-fabric) to versions
+that aren't maintained or present upstream. 1.16.1 is the current priority.
+
 ### Downloads
 
-You can find downloads for Lithium on either the [official CurseForge page](https://www.curseforge.com/minecraft/mc-mods/lithium)
-or through the [GitHub releases page](https://github.com/jellysquid3/lithium-fabric/releases). Usually, builds will be
-made available on GitHub slightly sooner than other locations.
+You can find downloads on the [GitHub releases page](https://github.com/mrmangohands/lithium-fabric/releases).
 
 ### Installation instructions
 
@@ -49,7 +48,7 @@ solution for those wanting to speed up their game, and as such, installing Lithi
 to the player.
 
 If you do encounter an issue where Lithium deviates from the norm, please don't hesitate to
-[open an issue.](https://github.com/jellysquid3/lithium-fabric/issues) Each patch is carefully checked to ensure
+[open an issue.](https://github.com/mrmangohands/lithium-fabric/issues) Each patch is carefully checked to ensure
 vanilla parity, but after all, bugs are unavoidable.
 
 ### Configuration
@@ -68,6 +67,8 @@ format and all available options.
 
 If you're hacking on the code or would like to compile a custom build of Lithium from the latest sources, you'll want
 to start here.
+
+Warning, I will likely be force pushing updates.
 
 #### Prerequisites
 
@@ -93,4 +94,4 @@ artifacts in `build/libs`.
 ### License
 
 Lithium is licensed under GNU LGPLv3, a free and open-source license. For more information, please see the
-[license file](https://github.com/jellysquid3/lithium-fabric/blob/1.16.x/fabric/LICENSE.txt).
+[license file](https://github.com/mrmangohands/lithium-fabric/blob/1.16.x/fabric/LICENSE.txt).
