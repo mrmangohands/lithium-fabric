@@ -22,6 +22,8 @@ public class PathNodeDefaults {
             return PathNodeType.DANGER_FIRE;
         } else if (state.getFluidState().isIn(FluidTags.WATER)) {
             return PathNodeType.WATER_BORDER;
+        } else if (state.getFluidState().isIn(FluidTags.LAVA)) {
+            return PathNodeType.LAVA;
         } else {
             return PathNodeType.OPEN;
         }
@@ -96,6 +98,6 @@ public class PathNodeDefaults {
     }
 
     private static boolean isFireDangerSource(BlockState blockState) {
-        return blockState.isIn(BlockTags.FIRE) || blockState.isOf(Blocks.LAVA) || blockState.isOf(Blocks.MAGMA_BLOCK) || CampfireBlock.isLitCampfire(blockState);
+        return blockState.isIn(BlockTags.FIRE) || blockState.isOf(Blocks.MAGMA_BLOCK) || CampfireBlock.isLitCampfire(blockState);
     }
 }
