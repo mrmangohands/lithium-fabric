@@ -8,27 +8,28 @@ minecraft {
     refmapName = "mixins.lithium.refmap.json"
 }
 
+def getDate() {
+    return new Date().format('yyyy-MM-dd')
+}
+
 allprojects {
     apply plugin: 'fabric-loom'
 
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 
-    archivesBaseName = "${project.name}-fabric-mc${project.minecraft_version}"
+    archivesBaseName = "${project.name}-${project.minecraft_version}-backport-fabric"
 
     println(archivesBaseName)
     group = project.maven_group
+
     version = project.mod_version
+    def action = System.getenv("GITHUB_ACTIONS")
 
-    def build_release = System.getenv("BUILD_RELEASE") == "true"
-    def build_id = System.getenv("BUILD_ID")
+    version += "-SNAPSHOT"
 
-    if (!build_release) {
-        version += "-SNAPSHOT"
-    }
-
-    if (build_id != null) {
-        version += "+build.${build_id}"
+    if (action != null) {
+        version += "+" + getDate()
     }
 
     dependencies {
